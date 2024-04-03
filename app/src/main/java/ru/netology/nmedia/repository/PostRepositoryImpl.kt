@@ -38,7 +38,7 @@ class PostRepositoryImpl : PostRepository {
     override fun likeById(id: Long) {
         val request = Request.Builder()
             .post(gson.toJson(id).toRequestBody(jsonType))
-            .url("${BASE_URL}/api/slow/posts/$id/likes")
+            .url("${BASE_URL}/api/posts/$id/likes")
             .build()
         client.newCall(request)
             .execute()
